@@ -11,5 +11,9 @@ COPY texmf /usr/share/texmf
 
 RUN texhash
 
+RUN updmap-sys --enable Map 5ch.map && \
+updmap-sys --enable Map 5fp.map && \
+updmap-sys --enable Map 5sf.map
+
 WORKDIR /data
 VOLUME ["/data"]
